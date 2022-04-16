@@ -21,7 +21,7 @@ namespace AbajurrBot.ConsoleApp.Commands
         {
             try
             {
-                await context.DeferAsync(true);
+                await context.DeferAsync();
 
                 var url = Configuration.ServerConfigUrl;
                 var server = await _serverServices.GetServerAsync(url);
