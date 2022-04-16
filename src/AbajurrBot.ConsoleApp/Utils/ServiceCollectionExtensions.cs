@@ -38,7 +38,7 @@ namespace AbajurrBot.ConsoleApp.Utils
         private static IServiceCollection AddAbajurrServices(this IServiceCollection services)
         {
             return services
-                .AddTransient<IServerServices, ServerServices>();
+                .AddTransient<IServerService, ServerService>();
         }
 
         private static IServiceCollection AddExternalClients(this IServiceCollection services)

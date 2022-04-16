@@ -7,10 +7,10 @@ namespace AbajurrBot.ConsoleApp.Commands
 {
     public class ServerCommands : ApplicationCommandModule
     {
-        private readonly IServerServices _serverServices;
+        private readonly IServerService _serverServices;
         private readonly DiscordWebhookBuilder _webhook;
 
-        public ServerCommands(IServerServices serverServices, DiscordWebhookBuilder webhook)
+        public ServerCommands(IServerService serverServices, DiscordWebhookBuilder webhook)
         {
             _serverServices = serverServices;
             _webhook = webhook;

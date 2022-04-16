@@ -2,7 +2,7 @@
 
 namespace AbajurrBot.Core.Services.Interfaces
 {
-    public interface IServerServices
+    public interface IServerService
     {
         Task<Server> GetServerAsync(string url);
     }

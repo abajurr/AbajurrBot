@@ -5,12 +5,12 @@ using YamlDotNet.Serialization;
 
 namespace AbajurrBot.Core.Services
 {
-    public class ServerServices : IServerServices
+    public class ServerService : IServerService
     {
         private readonly IGithubClient _githubClient;
         private readonly IDeserializer _deserializer;
 
-        public ServerServices(IGithubClient githubClient, IDeserializer deserializer)
+        public ServerService(IGithubClient githubClient, IDeserializer deserializer)
         {
             _githubClient = githubClient;
             _deserializer = deserializer;
