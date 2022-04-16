@@ -2,6 +2,10 @@
 {
     public enum ChannelType
     {
-        Text
+        Unknown,
+        Category,
+        Text,
+        Voice,
+        News,
     }
 }

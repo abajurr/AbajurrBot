@@ -1,16 +1,31 @@
-﻿using AbajurrBot.Core.Utils;
+﻿using System.Text;
 
 namespace AbajurrBot.Core.Models
 {
     public class Server
     {
-        public string Name { get; set; }
-        public string Icon { get; set; }
-        public Dictionary<string, Channel> Channels { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Icon { get; set; } = string.Empty;
+        public Dictionary<string, Channel> Channels { get; set; } = new();
 
-        public override string ToString()
+        public string GetInfos()
         {
-            return $"Nome: {Name}\nImagem: {Icon}\nCanais: {Channels.AsString()}";
+            var infos = new StringBuilder();
+            var grouppedChannels = Channels.Values.GroupBy(c => c.ChannelType).ToList();
+
+            infos.AppendLine($"- Image: {Icon}");
+
+            foreach (var group in grouppedChannels)
+            {
+                infos.AppendLine($"- {group.Key} Channels:");
+
+                foreach (var channel in group)
+                {
+                    infos.AppendLine($"  - {channel.Name}");
+                }
+            }
+
+            return infos.ToString();
         }
     }
 }

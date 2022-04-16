@@ -1,4 +1,5 @@
-﻿using AbajurrBot.Core.Clients;
+﻿using AbajurrBot.ConsoleApp.Handlers;
+using AbajurrBot.Core.Clients;
 using AbajurrBot.Core.Services;
 using AbajurrBot.Core.Services.Interfaces;
 using AbajurrBot.Infra.Clients;
@@ -15,10 +16,11 @@ namespace AbajurrBot.ConsoleApp.Utils
         {
             return services
                 .AddHttpClient()
-                .AddYamlDeserializer()
+                .AddDiscordWebhook()
                 .AddExternalClients()
                 .AddAbajurrServices()
-                .AddDiscordWebhook();
+                .AddCommandHandlers()
+                .AddYamlDeserializer();
         }
 
         private static IServiceCollection AddHttpClient(this IServiceCollection services)
@@ -33,6 +35,11 @@ namespace AbajurrBot.ConsoleApp.Utils
                 .Build();
 
             return services.AddSingleton(deserializer);
+        }
+
+        private static IServiceCollection AddCommandHandlers(this IServiceCollection services)
+        {
+            return services.AddTransient<ServerCommandsHandler>();
         }
 
         private static IServiceCollection AddAbajurrServices(this IServiceCollection services)
