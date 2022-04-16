@@ -28,7 +28,11 @@ namespace AbajurrBot.ConsoleApp.Utils
 
         private static IServiceCollection AddYamlDeserializer(this IServiceCollection services)
         {
-            return services.AddSingleton(CreateYamlDeserializer());
+            var deserializer = new DeserializerBuilder()
+                .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .Build();
+
+            return services.AddSingleton(deserializer);
         }
 
         private static IServiceCollection AddAbajurrServices(this IServiceCollection services)
@@ -45,13 +49,6 @@ namespace AbajurrBot.ConsoleApp.Utils
         private static IServiceCollection AddDiscordWebhook(this IServiceCollection services)
         {
             return services.AddTransient<DiscordWebhookBuilder>();
-        }
-
-        private static IDeserializer CreateYamlDeserializer()
-        {
-            return new DeserializerBuilder()
-                .WithNamingConvention(CamelCaseNamingConvention.Instance)
-                .Build();
         }
     }
 }

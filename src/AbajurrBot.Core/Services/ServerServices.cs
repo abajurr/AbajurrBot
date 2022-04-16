@@ -1,6 +1,6 @@
 ﻿using AbajurrBot.Core.Clients;
-using AbajurrBot.Core.Services.Interfaces;
 using AbajurrBot.Core.Models;
+using AbajurrBot.Core.Services.Interfaces;
 using YamlDotNet.Serialization;
 
 namespace AbajurrBot.Core.Services
