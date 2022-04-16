@@ -1,4 +1,4 @@
-﻿namespace AbajurBot.Core.Clients
+﻿namespace AbajurrBot.Core.Clients
 {
     public interface IGithubClient
     {

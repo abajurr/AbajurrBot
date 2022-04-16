@@ -1,4 +1,4 @@
-﻿namespace AbajurrBot.Core.ServerConfiguration.Models
+﻿namespace AbajurrBot.Core.Models
 {
     public enum ChannelType
     {

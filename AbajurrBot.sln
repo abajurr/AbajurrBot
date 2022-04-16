@@ -5,13 +5,13 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbajurrBot.Tests", "tests\AbajurrBot.Tests\AbajurrBot.Tests.csproj", "{04EEC410-7215-4FEA-AAE5-8D14B8F03A04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbajurBot.Infra", "src\AbajurBot.Infra\AbajurBot.Infra.csproj", "{895FE2C1-4572-4C89-8334-112335B0B4A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbajurrBot.Infra", "src\AbajurrBot.Infra\AbajurrBot.Infra.csproj", "{895FE2C1-4572-4C89-8334-112335B0B4A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbajurBot.Core", "src\AbajurBot.Core\AbajurBot.Core.csproj", "{07BA6F5C-0E3B-4084-BAED-219C8E8B4B52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbajurrBot.Core", "src\AbajurrBot.Core\AbajurrBot.Core.csproj", "{07BA6F5C-0E3B-4084-BAED-219C8E8B4B52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Application", "1- Application", "{BA802CB7-CC45-4E38-A871-3A169EDB85FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbajurBot.ConsoleApp", "src\AbajurBot.ConsoleApp\AbajurBot.ConsoleApp.csproj", "{281344CA-46B8-49B8-838C-37247F28DA17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbajurrBot.ConsoleApp", "src\AbajurrBot.ConsoleApp\AbajurrBot.ConsoleApp.csproj", "{281344CA-46B8-49B8-838C-37247F28DA17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Core", "2- Core", "{EAFA6714-1C58-4607-8489-ACA5106EF7EF}"
 EndProject

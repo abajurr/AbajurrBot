@@ -1,6 +1,6 @@
-﻿using AbajurBot.Core.Clients;
+﻿using AbajurrBot.Core.Clients;
 
-namespace AbajurBot.Infra.Clients
+namespace AbajurrBot.Infra.Clients
 {
     public class GithubClient : IGithubClient
     {

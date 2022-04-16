@@ -1,6 +1,6 @@
 ﻿using YamlDotNet.Serialization;
 
-namespace AbajurrBot.Core.ServerConfiguration.Models
+namespace AbajurrBot.Core.Models
 {
     public class Channel
     {
@@ -8,5 +8,7 @@ namespace AbajurrBot.Core.ServerConfiguration.Models
 
         [YamlMember(Alias = "type")]
         public ChannelType ChannelType { get; set; }
+
+        public override string ToString() => $"{Name} ({ChannelType})";
     }
 }
