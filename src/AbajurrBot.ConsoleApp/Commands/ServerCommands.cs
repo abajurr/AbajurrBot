@@ -1,10 +1,13 @@
 ﻿using AbajurrBot.ConsoleApp.Handlers;
 using AbajurrBot.ConsoleApp.Utils;
 using AbajurrBot.Core.Utils.Constants;
+using DSharpPlus;
 using DSharpPlus.SlashCommands;
+using DSharpPlus.SlashCommands.Attributes;
 
 namespace AbajurrBot.ConsoleApp.Commands
 {
+    [SlashRequirePermissions(Permissions.Administrator)]
     public class ServerCommands : ApplicationCommandModule
     {
         private readonly ServerCommandsHandler _handler;
@@ -33,7 +36,7 @@ namespace AbajurrBot.ConsoleApp.Commands
         {
             await context.StartResponseAsync();
             await context.Guild.ClearGuildAsync();
-            await context.Guild.CreateChannelAsync("test", DSharpPlus.ChannelType.Text);
+            await context.Guild.CreateChannelAsync("test", ChannelType.Text);
         }
     }
 }
