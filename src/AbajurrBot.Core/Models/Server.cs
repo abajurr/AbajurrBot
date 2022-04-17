@@ -1,4 +1,6 @@
-﻿namespace AbajurrBot.Core.Models
+﻿using AbajurrBot.Core.Exceptions;
+
+namespace AbajurrBot.Core.Models
 {
     public class Server
     {
@@ -15,7 +17,7 @@
 
         private bool Validate()
         {
-            foreach(var channel in Channels)
+            foreach (var channel in Channels)
             {
                 ValidateChannel(channel);
             }
@@ -25,16 +27,8 @@
 
         private bool ValidateChannel(Channel channel)
         {
-            var category = channel.Category;
-
-            if (!Categories.Contains(category))
-            {
-                var channelCategories = string.Join(", ", Categories);
-
-                throw new ArgumentException(
-                    $"Channel {channel.Name} has unexisting category {category}. " +
-                    $"Actual categories: {channelCategories}");
-            }
+            if (!Categories.Contains(channel.Category))
+                throw new CategoryNotFoundException(this, channel);
 
             return true;
         }

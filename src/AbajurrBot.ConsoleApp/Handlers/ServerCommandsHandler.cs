@@ -1,7 +1,6 @@
 ﻿using AbajurrBot.ConsoleApp.Commands;
 using AbajurrBot.ConsoleApp.Mappers;
 using AbajurrBot.ConsoleApp.Utils;
-using AbajurrBot.Core.Models;
 using AbajurrBot.Core.Services.Interfaces;
 using DSharpPlus.Entities;
 
