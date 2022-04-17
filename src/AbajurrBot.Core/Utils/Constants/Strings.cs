@@ -1,6 +1,6 @@
 ﻿namespace AbajurrBot.Core.Utils.Constants
 {
-    public static class StringConstants
+    public static class Strings
     {
         public struct Server
         {

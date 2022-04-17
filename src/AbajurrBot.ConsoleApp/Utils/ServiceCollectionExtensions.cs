@@ -1,8 +1,6 @@
 ﻿using AbajurrBot.ConsoleApp.Handlers;
-using AbajurrBot.Core.Clients;
 using AbajurrBot.Core.Services;
 using AbajurrBot.Core.Services.Interfaces;
-using AbajurrBot.Infra.Clients;
 using DSharpPlus.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using YamlDotNet.Serialization;
@@ -17,7 +15,6 @@ namespace AbajurrBot.ConsoleApp.Utils
             return services
                 .AddHttpClient()
                 .AddDiscordWebhook()
-                .AddExternalClients()
                 .AddAbajurrServices()
                 .AddCommandHandlers()
                 .AddYamlDeserializer();
@@ -46,11 +43,6 @@ namespace AbajurrBot.ConsoleApp.Utils
         {
             return services
                 .AddTransient<IServerService, ServerService>();
-        }
-
-        private static IServiceCollection AddExternalClients(this IServiceCollection services)
-        {
-            return services.AddSingleton<IGithubClient, GithubClient>();
         }
 
         private static IServiceCollection AddDiscordWebhook(this IServiceCollection services)

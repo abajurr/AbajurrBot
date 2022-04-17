@@ -1,5 +1,4 @@
-﻿using AbajurrBot.Core.Models;
-using DSharpPlus.SlashCommands;
+﻿using DSharpPlus.SlashCommands;
 
 namespace AbajurrBot.ConsoleApp.Commands
 {

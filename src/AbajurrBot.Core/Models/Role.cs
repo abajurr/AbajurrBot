@@ -8,7 +8,7 @@
         public List<ulong> Users { get; set; } = new();
 
         public override string ToString() => $"{Name} [{Color}]";
-        public string UserInfos => 
+        public string UserInfos =>
             Users.Any() ?
             string.Join('\n', Users.Select(u => $"- <@{u}>")) :
             "- No users";

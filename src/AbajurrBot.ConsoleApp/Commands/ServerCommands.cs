@@ -14,14 +14,14 @@ namespace AbajurrBot.ConsoleApp.Commands
             _handler = handler;
         }
 
-        [SlashCommand(StringConstants.Server.GetServerCommand, StringConstants.Server.GetServerCommandDescription)]
+        [SlashCommand(Strings.Server.GetServerCommand, Strings.Server.GetServerCommandDescription)]
         public async Task GetServerCommand(InteractionContext context)
         {
             var command = new GetServerCommandParams(context, Configuration.ServerConfigUrl);
             await _handler.Handle(command);
         }
 
-        [SlashCommand(StringConstants.Server.ApplyCommand, StringConstants.Server.ApplyCommandDescription)]
+        [SlashCommand(Strings.Server.ApplyCommand, Strings.Server.ApplyCommandDescription)]
         public async Task ApplyServerConfigCommand(InteractionContext context)
         {
             var command = new ApplyServerConfigCommandParams(context, Configuration.ServerConfigUrl);

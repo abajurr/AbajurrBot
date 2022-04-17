@@ -26,7 +26,7 @@ namespace AbajurrBot.ConsoleApp.Mappers
                 Title = "Roles"
             };
 
-            foreach(var role in roles)
+            foreach (var role in roles)
             {
                 embed.AddField(role.ToString(), role.UserInfos);
             }
@@ -54,8 +54,8 @@ namespace AbajurrBot.ConsoleApp.Mappers
 
         private static DiscordEmbed GetServerTitleEmbed => new DiscordEmbedBuilder
         {
-            Title = StringConstants.Server.GetServerResponseTitle,
-            Description = StringConstants.Server.GetServerResponseDescription,
+            Title = Strings.Server.GetServerResponseTitle,
+            Description = Strings.Server.GetServerResponseDescription,
         };
     }
 }
