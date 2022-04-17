@@ -9,6 +9,9 @@
 
             public const string GetServerResponseTitle = "Server Information";
             public const string GetServerResponseDescription = "This is the latest server configuration on discord-infra";
+
+            public const string ApplyCommand = "apply";
+            public const string ApplyCommandDescription = "Apply configurations listed on infra-discord to the server";
         }
 
         public struct Health

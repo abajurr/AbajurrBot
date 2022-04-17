@@ -20,5 +20,20 @@ namespace AbajurrBot.ConsoleApp.Commands
             var command = new GetServerCommandParams(context, Configuration.ServerConfigUrl);
             await _handler.Handle(command);
         }
+
+        [SlashCommand(StringConstants.Server.ApplyCommand, StringConstants.Server.ApplyCommandDescription)]
+        public async Task ApplyServerConfigCommand(InteractionContext context)
+        {
+            var command = new ApplyServerConfigCommandParams(context, Configuration.ServerConfigUrl);
+            await _handler.Handle(command);
+        }
+
+        [SlashCommand("restart", "Delete all channels and create a channel called test")]
+        public static async Task RestartGuildCommand(InteractionContext context)
+        {
+            await context.StartResponseAsync();
+            await context.Guild.DeleteAllChannelsAsync();
+            await context.Guild.CreateChannelAsync("test", DSharpPlus.ChannelType.Text);
+        }
     }
 }
