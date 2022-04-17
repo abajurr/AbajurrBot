@@ -32,7 +32,7 @@ namespace AbajurrBot.ConsoleApp.Commands
         public static async Task RestartGuildCommand(InteractionContext context)
         {
             await context.StartResponseAsync();
-            await context.Guild.DeleteAllChannelsAsync();
+            await context.Guild.ClearGuildAsync();
             await context.Guild.CreateChannelAsync("test", DSharpPlus.ChannelType.Text);
         }
     }
