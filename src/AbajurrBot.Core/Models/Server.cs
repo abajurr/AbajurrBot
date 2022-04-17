@@ -1,31 +1,36 @@
-﻿using System.Text;
-
-namespace AbajurrBot.Core.Models
+﻿namespace AbajurrBot.Core.Models
 {
     public class Server
     {
         public string Name { get; set; } = string.Empty;
         public string Icon { get; set; } = string.Empty;
-        public Dictionary<string, Channel> Channels { get; set; } = new();
+        public List<string> Categories { get; set; } = new();
+        public List<Channel> Channels { get; set; } = new();
 
-        public string GetInfos()
+        public bool Validate()
         {
-            var infos = new StringBuilder();
-            var grouppedChannels = Channels.Values.GroupBy(c => c.ChannelType).ToList();
-
-            infos.AppendLine($"- Image: {Icon}");
-
-            foreach (var group in grouppedChannels)
+            foreach(var channel in Channels)
             {
-                infos.AppendLine($"- {group.Key} Channels:");
-
-                foreach (var channel in group)
-                {
-                    infos.AppendLine($"  - {channel.Name}");
-                }
+                ValidateChannel(channel);
             }
 
-            return infos.ToString();
+            return true;
+        }
+
+        private bool ValidateChannel(Channel channel)
+        {
+            var category = channel.Category;
+
+            if (!Categories.Contains(category))
+            {
+                var channelCategories = string.Join(", ", Categories);
+
+                throw new ArgumentException(
+                    $"Channel {channel.Name} has unexisting category {category}. " +
+                    $"Actual categories: {channelCategories}");
+            }
+
+            return true;
         }
     }
 }

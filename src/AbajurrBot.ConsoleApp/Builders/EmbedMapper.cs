@@ -1,13 +1,22 @@
 ﻿using AbajurrBot.Core.Models;
 using AbajurrBot.Core.Utils.Constants;
 using DSharpPlus.Entities;
-using System.Text;
 
 namespace AbajurrBot.ConsoleApp.Mappers
 {
     public class EmbedMapper
     {
-        public static DiscordEmbed Map(Server server)
+        public static List<DiscordEmbed> Map(Server server)
+        {
+            var channelsEmbed = Map(server.Channels);
+
+            return new List<DiscordEmbed>
+            {
+                channelsEmbed,
+            };
+        }
+
+        public static DiscordEmbed Map(List<Channel> channels)
         {
             var embed = new DiscordEmbedBuilder
             {
@@ -15,18 +24,12 @@ namespace AbajurrBot.ConsoleApp.Mappers
                 Description = Strings.Server.MessageDescription,
             };
 
-            var grouppedChannels = server.Channels.Values.GroupBy(c => c.ChannelType);
+            var grouppedChannels = channels.GroupBy(c => c.Category);
 
             foreach (var group in grouppedChannels)
             {
-                var channels = new StringBuilder();
-
-                foreach(var channel in group)
-                {
-                    channels.AppendLine($"- {channel.Name}");
-                }
-
-                embed.AddField($"{group.Key} Channels", channels.ToString(), inline: true);
+                var content = string.Join('\n', group.ToList());
+                embed.AddField($"{group.Key}", content.ToString());
             }
 
             return embed;

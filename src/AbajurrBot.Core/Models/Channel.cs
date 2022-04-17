@@ -1,12 +1,11 @@
-﻿using YamlDotNet.Serialization;
-
-namespace AbajurrBot.Core.Models
+﻿namespace AbajurrBot.Core.Models
 {
     public class Channel
     {
         public string Name { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
+        public ChannelType Type { get; set; }
 
-        [YamlMember(Alias = "type")]
-        public ChannelType ChannelType { get; set; }
+        public override string ToString() => $"- {Name} [{Type}]";
     }
 }

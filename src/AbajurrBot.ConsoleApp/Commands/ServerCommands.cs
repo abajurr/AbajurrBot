@@ -15,10 +15,9 @@ namespace AbajurrBot.ConsoleApp.Commands
         }
 
         [SlashCommand(Strings.Server.Command, Strings.Server.CommandDescription)]
-        public async Task GetServerCommand(InteractionContext context, string? configUrl = null)
+        public async Task GetServerCommand(InteractionContext context)
         {
-            var url = configUrl ?? Configuration.ServerConfigUrl;
-            var command = new GetServerCommandParams(context, url);
+            var command = new GetServerCommandParams(context, Configuration.ServerConfigUrl);
             await _handler.Handle(command);
         }
     }
