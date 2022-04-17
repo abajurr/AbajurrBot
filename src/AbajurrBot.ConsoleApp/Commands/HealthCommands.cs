@@ -5,12 +5,12 @@ namespace AbajurrBot.ConsoleApp.Commands
 {
     public class HealthCommands : ApplicationCommandModule
     {
-        [SlashCommand(Strings.Health.Command, Strings.Health.CommandDescription)]
+        [SlashCommand(StringConstants.Health.PingCommand, StringConstants.Health.PingCommandDescription)]
         public static async Task PingCommand(InteractionContext context)
         {
             try
             {
-                await context.CreateResponseAsync(Strings.Health.CommandResponse);
+                await context.CreateResponseAsync(StringConstants.Health.PingResponse);
             }
             catch (Exception ex)
             {

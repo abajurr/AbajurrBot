@@ -20,8 +20,8 @@ namespace AbajurrBot.ConsoleApp.Mappers
         {
             var embed = new DiscordEmbedBuilder
             {
-                Title = Strings.Server.MessageTitle,
-                Description = Strings.Server.MessageDescription,
+                Title = StringConstants.Server.GetServerResponseTitle,
+                Description = StringConstants.Server.GetServerResponseDescription,
             };
 
             var grouppedChannels = channels.GroupBy(c => c.Category);
