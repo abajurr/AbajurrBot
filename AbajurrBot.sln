@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Infrasctructure", "3- In
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Tests", "4- Tests", "{115FD897-AB76-4A68-83D1-42B91EF71CA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbajurrBot.Core.Tests", "tests\AbajurrBot.Core.Tests\AbajurrBot.Core.Tests.csproj", "{12E79BF3-B0FC-4131-99B3-D025D148EE5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{281344CA-46B8-49B8-838C-37247F28DA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281344CA-46B8-49B8-838C-37247F28DA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281344CA-46B8-49B8-838C-37247F28DA17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E79BF3-B0FC-4131-99B3-D025D148EE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E79BF3-B0FC-4131-99B3-D025D148EE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E79BF3-B0FC-4131-99B3-D025D148EE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E79BF3-B0FC-4131-99B3-D025D148EE5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{895FE2C1-4572-4C89-8334-112335B0B4A1} = {722DC9B2-C669-4FA0-A2B4-5F237E27A582}
 		{07BA6F5C-0E3B-4084-BAED-219C8E8B4B52} = {EAFA6714-1C58-4607-8489-ACA5106EF7EF}
 		{281344CA-46B8-49B8-838C-37247F28DA17} = {BA802CB7-CC45-4E38-A871-3A169EDB85FF}
+		{12E79BF3-B0FC-4131-99B3-D025D148EE5A} = {115FD897-AB76-4A68-83D1-42B91EF71CA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61EFA8EE-2ACF-476E-BC04-E886E2DF1685}
